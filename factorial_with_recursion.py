@@ -12,6 +12,3 @@ def factorial_with_recursion(n):
 		return 1  # 1! = 1
 	else:
 		return n * factorial_with_recursion(n-1)
-
-
-print(factorial_with_recursion(1005))
