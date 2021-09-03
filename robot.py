@@ -11,17 +11,21 @@ def robot(commands_list):
     x = 0
     y = 0
 
-    for command in commands_list:
-        value, direction = command.split()
-        if direction == "UP":
-            y += int(value)
-        elif direction == "DOWN":
-            y -= int(value)
-        elif direction == "RIGHT":
-            x += int(value)
-        elif direction == "LEFT":
-            x -= int(value)
-        else:
-            print("Unknown direction '" + direction + "'")
+    try:
+        for command in commands_list:
+            value, direction = command.split()
+            if direction == "UP":
+                y += int(value)
+            elif direction == "DOWN":
+                y -= int(value)
+            elif direction == "RIGHT":
+                x += int(value)
+            elif direction == "LEFT":
+                x -= int(value)
+            else:
+                raise TypeError('Invalid command')
+    except TypeError as e:
+        print(e)
+        return None
 
     return sqrt(x ** 2 + y ** 2)

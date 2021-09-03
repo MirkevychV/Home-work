@@ -4,5 +4,9 @@ def string_to_upper_case(list_str):
 	(list[str]) і виводить кожен рядок, роблячи кожну першу букву слова
 	великою
 	"""
-	for word in list_str:
-		print(word.title())
+	result = ''
+
+	for text in list_str:
+		result += (text.title()) + '\n'
+
+	return result
